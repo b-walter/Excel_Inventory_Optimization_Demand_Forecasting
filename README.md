@@ -66,9 +66,11 @@ The 4,802 products were classified using a traditional ABC analysis. Products we
 
 ### 2. Demand Variability
 Demand variability was divided into three categories using the coefficient of variation (CV).
+
 $$
 CV = \frac{\text{Monthly Demand Standard Deviation}}{\text{Average Monthly Demand}}
 $$
+
 The criteria for the three demand categories are here:
 
 **Stable Demand:** CV < 0.50  
@@ -77,6 +79,7 @@ The criteria for the three demand categories are here:
 
 ### 3. Demand Forecasting
 For this analysis I tested three forecasting methods: Naive, 3-Month Moving Average, and Seasonal Naive. Each method used the data from January 2010 through June 2011 as the training period to compare against the data in the testing period of July 2011 through November 2011. The primary comparison metric was the weighted absolute percentage error (WAPE), where a lower WAPE indicates a better method.
+
 $$
 WAPE = \frac{\sum|{\text{Actual units sold - Forecasted Units Sold}}|}{\sum{\text{Actual units sold}}}\times100\%
 $$
@@ -84,10 +87,12 @@ $$
 ### 4. Inventory Planning
 To develop inventory replenishment recommendations, I assumed a fixed 14-day supplier lead time and established ABC-based service-level targets of 98% for Class A, 95% for Class B, and 90% for Class C products. These assumptions were used to calculate safety stock requirements and reorder points for each of the 4,802 merchandise products.
 
-**Safety Stock**  
+**Safety Stock**
+
 $$
 SS = Z \times \sigma_d \times \sqrt{L}
 $$
+
 Where:  
 **Z** = Z-score corresponding to the ABC service-level target  
 **$\sigma_d$** = Estimated daily demand standard deviation  
@@ -95,10 +100,12 @@ Where:
 
 Daily demand standard deviation was estimated by dividing monthly demand standard deviation by the square root of 30, assuming a 30-day month and independent daily demand fluctuations.
 
-**Reorder Point**  
+**Reorder Point**
+
 $$
 ROP = (d \times L) + SS
 $$
+
 Where:  
 **d** = Average daily demand, calculated as average monthly demand divided by 30  
 **L** = Supplier lead time in days  
