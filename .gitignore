@@ -1,0 +1,6 @@
+# Exclude original raw dataset
+raw_data/
+
+# Exclude Excel temporary files
+~$*.xlsx
+~$*.xlsm
